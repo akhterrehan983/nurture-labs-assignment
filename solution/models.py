@@ -9,7 +9,7 @@ class user(models.Model):
 
 class advisor(models.Model):
     name = models.CharField(max_length=50,null=False,blank=False)
-    photo = models.ImageField(upload_to='pictures/%Y/%m/%d/', max_length=255, null=False, blank=False)
+    photo = models.ImageField(upload_to='static', max_length=255, null=False, blank=False)
 
 class callsBooked(models.Model):
     dateTime = models.CharField(max_length=50,null=False,blank=False) 
