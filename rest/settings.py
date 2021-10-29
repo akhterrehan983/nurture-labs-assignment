@@ -48,10 +48,8 @@ REST_FRAMEWORK = {
      ],
 }
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "myproject", "site_static")]
-STATIC_ROOT = "/static/"
-STATIC_URL = "/static/"
-MEDIA_ROOT = "/media/"  
-MEDIA_URL = "/media/"
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
