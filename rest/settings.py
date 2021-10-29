@@ -47,9 +47,11 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
      ],
 }
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "myproject", "site_static")]
-STATIC_ROOT = "/static/"
-STATIC_URL = "/static/"
+BASE_DIR = Path(__file__).resolve().parent.parent
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
