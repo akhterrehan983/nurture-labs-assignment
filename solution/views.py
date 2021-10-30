@@ -87,7 +87,7 @@ def bookAdvisor(request,userId=None,advisorId=None):
   
     if "dateTime" not in request.data:
         return Response("dateTime field is missing",status=status.HTTP_400_BAD_REQUEST)
-    elif request.data["dateTime"] >= datetime.datetime.now():
+    else:
         dateTime = request.data["dateTime"]
         d = dateTimeSerializer(data=request.data)
         if d.is_valid():
@@ -96,8 +96,7 @@ def bookAdvisor(request,userId=None,advisorId=None):
             return Response(status=status.HTTP_200_OK)
         else:
             return Response("Wrong dateTime format!!! It should be yy-mm-dd HH:MM",status=status.HTTP_400_BAD_REQUEST)
-    else:
-        return Response("datetime must be greater than the current dateTime!!!",status=status.HTTP_400_BAD_REQUEST)
+
 @api_view(['GET'])
 def getBookedCalls(request,userId=None):
     try:
